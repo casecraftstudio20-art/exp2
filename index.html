@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Registration</title>
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            
+        }
+        .emailcontainer input[type="email"]{ 
+            font-family: Arial,sans-serif;
+            padding: 5px;
+            margin-bottom: 15px;
+
+        }
+        .passwordcontainer input[type="password"]{
+            font-family: Arial,sans-serif;
+            padding: 5px;
+            margin-bottom: 15px;
+
+        }
+        .namecontainer input[type="text"]{
+            font-family: Arial,sans-serif;
+            padding: 5px;
+            margin-bottom: 15px;
+            
+        }
+        .phonecontainer input[type="tel"]{
+            font-family: Arial,sans-serif;
+            padding: 5px;
+            margin-bottom: 15px;
+        }
+
+        .radio-group{
+            font-family: Arial,sans-serif;
+            padding:5px;
+            margin-bottom: 5px;
+            background-color: rgb(158, 109, 109);
+        }
+    
+    </style>
+</head>
+<body>
+
+    <form action="/serverlogic" method="post">
+        <h1>University application form</h1>
+
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <div class="namecontainer">
+                <label for="fullname" >
+                    Full Name:
+                </label>
+                <input type="text" id="fullname" name="name" placeholder="enter ur name"> 
+            </div>
+                <div class="emailcontainer" >
+                    <label for="email" >
+                        email:
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="enter ur email"> 
+                
+            </div>
+
+         </div>
+         <div class="passwordcontainer" >
+            <label for="password" >
+                password:
+            </label>
+            <input type="password" id="password" name="password" placeholder="enter ur password"> 
+        
+         </div>
+        </div>
+        <div class="phonecontainer">
+            <label for="phone" >
+                phone:
+            </label>
+            <input type="tel" id="phone" name="phone" placeholder="enter ur phone"> 
+        
+    </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Gender</legend>
+            <div class="radio-group">
+                <input type="radio" id="genderMale" name="gender" value="male" required>
+                <label for="genderMale">Male</label>
+
+                <input type="radio" id="genderFemale" name="gender" value="female">
+                <label for="genderFemale">Female</label>
+
+                <input type="radio" id="genderOther" name="gender" value="other">
+                <label for="genderOther">Other</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Interests</legend>
+            <div class="checkbox-group">
+                <input type="checkbox" id="interestSports" name="interestSports" value="sports">
+                <label for="interestSports">Sports</label>
+
+                <input type="checkbox" id="interestReading" name="interestReading" value="reading">
+                <label for="interestReading">Reading</label>
+
+                <input type="checkbox" id="interestTech" name="interestTech" value="technology">
+                <label for="interestTech">Technology</label>
+
+                <input type="checkbox" id="interestMusic" name="interestMusic" value="music">
+                <label for="interestMusic">Music</label>
+
+                <input type="checkbox" id="interestTravel" name="interestTravel" value="travel">
+                <label for="interestTravel">Travel</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional Information</legend>
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="usa">United States</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="australia">Australia</option>
+                    <option value="germany">Germany</option>
+                    <option value="india">India</option>
+                    <option value="japan">Japan</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bio">Short Biography:</label>
+                <textarea id="bio" name="bio" rows="5" placeholder="Tell us a little about yourself (e.g., your hobbies, aspirations, etc.)" required>I am interested in learning new technologies.</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="registrationProgress">Registration Progress:</label>
+                <progress id="registrationProgress" value="0" max="100"></progress>
+            </div>
+
+        </fieldset>
+
+        <div class="button-group">
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear Form">
+        </div>
+
+    </form>
+
+</body>
+</html>
